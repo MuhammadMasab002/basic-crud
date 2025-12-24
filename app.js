@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import userRoute from "./src/routes/user.route";
+import userRouter from "./src/routes/user.route.js";
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Welcome to Backend API");
 });
-app.use("/api/users", userRoute);
+app.use("/api/users", userRouter);
 
 export default app;
