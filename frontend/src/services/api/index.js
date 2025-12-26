@@ -4,15 +4,13 @@ import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:8000/api",
+    baseUrl: "http://localhost:5000/api",
   }),
   tagTypes: ["USER"],
   endpoints: (builder) => ({
     // user get query
     getUser: builder.query({
-      query: () => ({
-        url: "/users/",
-      }),
+      query: () => "/users/",
       providesTags: ["USER"],
     }),
     // create user mutation
