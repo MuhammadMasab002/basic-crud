@@ -6,7 +6,7 @@ export const BUTTON_VARIANTS = {
   SECONDARY: "secondary",
   OUTLINE: "outline",
   TEXT_PRIMARY: "text-primary",
-  TEXT_SECONDARY: "text-secondary",
+  TEXT_DANGER: "text-danger",
   DANGER: "danger",
   SUCCESS: "success",
 };
@@ -69,11 +69,10 @@ const CustomButton = ({
     [BUTTON_VARIANTS.TEXT_PRIMARY]:
       "bg-transparent text-blue-600 hover:underline focus:ring-blue-400 disabled:text-blue-300",
 
-    [BUTTON_VARIANTS.TEXT_SECONDARY]:
-      "bg-transparent text-gray-600 hover:underline focus:ring-gray-400 disabled:text-gray-300",
-
     [BUTTON_VARIANTS.DANGER]:
       "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 focus:ring-red-500 disabled:bg-red-300",
+    [BUTTON_VARIANTS.TEXT_DANGER]:
+      "bg-transparent text-red-600 hover:underline focus:ring-red-400 disabled:text-red-300",
 
     [BUTTON_VARIANTS.SUCCESS]:
       "bg-green-600 text-white hover:bg-green-700 active:bg-green-800 focus:ring-green-500 disabled:bg-green-300",
