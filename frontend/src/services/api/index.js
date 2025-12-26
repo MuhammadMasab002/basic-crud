@@ -6,17 +6,48 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8000/api",
   }),
-  tagTypes: ["DATA"],
+  tagTypes: ["USER"],
   endpoints: (builder) => ({
-    // simple get query
-    getData: builder.query({
+    // user get query
+    getUser: builder.query({
       query: () => ({
-        url: "/get-endpoint",
+        url: "/users/",
       }),
-      providesTags: ["DATA"],
+      providesTags: ["USER"],
+    }),
+    // create user mutation
+    createUser: builder.mutation({
+      query: (userData) => ({
+        url: "/users/createUser",
+        method: "POST",
+        body: userData,
+      }),
+      invalidatesTags: ["USER"],
+    }),
+    // update user mutation
+    updateUser: builder.mutation({
+      query: ({ id, ...userData }) => ({
+        url: `/users/${id}`,
+        method: "PUT",
+        body: userData,
+      }),
+      invalidatesTags: ["USER"],
+    }),
+    // delete user mutation
+    deleteUser: builder.mutation({
+      query: (id) => ({
+        url: `/users/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["USER"],
     }),
   }),
   // endpoints: EndPointMethods,
 });
 
-export const { useGetDataQuery } = api;
+export const {
+  useGetUserQuery,
+  useCreateUserMutation,
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+} = api;
