@@ -4,7 +4,7 @@ import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://basic-crud-backend-sandy.vercel.app/api",
   }),
   tagTypes: ["USER"],
   endpoints: (builder) => ({
