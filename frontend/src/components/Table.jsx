@@ -13,8 +13,8 @@ const usersList = [
 const Table = ({ userData, isLoading, onClickEdit, onClickDelete }) => {
   const users = userData || usersList || [];
   return (
-    <div className="w-full max-w-2xl mx-auto overflow-auto py-4 mb-10">
-      <div className="w-full min-w-2xl px-4 overflow-hidden py-2 bg-white border border-gray-200 rounded shadow-sm">
+    <div className="w-full max-w-2xl mx-auto overflow-hidden py-4 mb-10">
+      <div className="w-full min-w-2xl px-4 overflow-auto py-2 bg-white border border-gray-200 rounded shadow-sm">
         {/* create an table to show all users */}
         <table className="w-full">
           <thead>

@@ -103,7 +103,7 @@ function Home() {
     }
 
     if (editingUserId) {
-      await triggerUpdateUser({ id: editingUserId, userData: formData });
+      await triggerUpdateUser({ id: editingUserId, ...formData });
       setEditingUserId(null);
       console.log(
         "Updating user with id:",
