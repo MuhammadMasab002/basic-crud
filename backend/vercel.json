@@ -11,9 +11,5 @@
       "src": "/api/(.*)",
       "dest": "server.js"
     }
-  ],
-  "env": {
-    "DATABASE_URI": "@mongo_uri",
-    "API_KEY": "@api_key"
-  }
+  ]
 }
